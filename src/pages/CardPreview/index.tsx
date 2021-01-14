@@ -16,10 +16,6 @@ const CardPreview: React.FC<CardPreview> = ({ previewImage, coverImage, title }:
   const [image, setImage] = useState('');
   const [postImage, setPostImage] = useState('');
 
-  const handleShowDetail = () => {
-    setShowDetail(true);
-  };
-
   useEffect(() => {
     if (previewImage) {
       setImage(`${process.env.REACT_APP_IMAGE_PATH}${previewImage}`);
@@ -37,8 +33,9 @@ const CardPreview: React.FC<CardPreview> = ({ previewImage, coverImage, title }:
   }, [coverImage]);
   return (
     <MainContainer
-      onClick={() => setShowDetail(!showDetail)}
-      type="button"
+      onClick={() => setShowDetail(true)}
+      onMouseLeave={() => setShowDetail(false)}
+
     >
       <PreviewContainer>
         <BackDropImage src={image} alt={title} />

@@ -10,7 +10,7 @@ const fromSmallToBig = keyframes`
   to{
     opacity:1;
     width:18vmax;
-    height:20vmax;
+    height:10vmax;
     top:-145px;
   }
 `;
@@ -19,7 +19,7 @@ const fromBigToSmall = keyframes`
   from{
     opacity:1;
     width:18vmax;
-    height:20vmax;
+    height:10vmax;
     top:-145px;
   }
   to{
@@ -43,13 +43,13 @@ background:rgba(0,0,0,.7);
 z-index:2;
 left: 50%;
 transform: translateX(-50%);
-cursor:pointer;
+
 
 ${(props) => (props.visible
     ? css`
   animation:${fromSmallToBig} .5s;
   width:18vmax;
-  height:20vmax;
+  height:10vmax;
   top:-145px;
   `
     : css`

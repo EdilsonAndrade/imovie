@@ -1,16 +1,18 @@
 import styled from 'styled-components';
 
-export const MainContainer = styled.button`
+export const MainContainer = styled.div`
   position:relative;
   background:none;
   border:none;
+  cursor:pointer;
+  margin-bottom:48px;
 `;
 
 export const PreviewContainer = styled.div`
 position:relative;
 box-shadow: -2px 1px 20px -12px #fff;
 border-radius:8px;
-cursor:pointer;
+
 `;
 
 export const BackDropImage = styled.img`
