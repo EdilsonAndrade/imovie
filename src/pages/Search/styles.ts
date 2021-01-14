@@ -4,7 +4,7 @@ interface IContainer{
   searchClicked?:boolean;
 }
 
-const size = keyframes`
+const showView = keyframes`
   from{
     border:none;
     width:1px;
@@ -16,7 +16,7 @@ const size = keyframes`
   }
 `;
 
-const hide = keyframes`
+const hideView = keyframes`
   from{
     width:220px;
     border:1px solid #7159c1;
@@ -28,8 +28,8 @@ const hide = keyframes`
     width:1px;
   }
 `;
+
 export const Container = styled.div<IContainer>`
- width:1px;
   padding:5px;
   display:flex;
   flex-direction:row;
@@ -37,16 +37,20 @@ export const Container = styled.div<IContainer>`
   width:0px;
   border:0;
   ${(props) => props.searchClicked && css`
-    animation: ${size} 1s;
+    animation: ${showView} .5s;
     width:220px;
     border:1px solid #7159c1;
     border-radius:8px;
   `}
   ${(props) => (props.searchClicked !== undefined && !props.searchClicked) && css`
-    animation: ${hide} 1s;
+    animation: ${hideView} .5s;
     width:0px;
     border:0;
   `}
+  button{
+      background:none;
+      border:none;
+    }
 
 
 `;
@@ -55,9 +59,11 @@ export const Content = styled.div`
 
 `;
 
-export const InputText = styled.input`
+export const InputText = styled.input<IContainer>`
 background:transparent;
 color:#7159c1;
 border:0px;
-margin-left:5px;
+visibility:hidden;
+width:72%;
+${(props) => (props.searchClicked ? css`visibility:visible` : css`visibility:hidden`)}
 `;

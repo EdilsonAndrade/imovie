@@ -41,7 +41,9 @@
           "tsx": "never"
         }
      ],
-     "react/require-default-props": "off"
+
+     "react/require-default-props": "off",
+     "@typescript-eslint/no-explicit-any":"off"
 
     },
     "settings": {

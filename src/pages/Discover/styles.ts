@@ -1,5 +1,16 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  width:100%;
+  padding:0 120px;
+  margin-top:120px;
+  height:126vh;
+`;
+
+export const GridContainer = styled.div`
+
+display:grid;
+grid-template-columns: repeat(5,1fr);
+grid-gap:10px;
 
 `;

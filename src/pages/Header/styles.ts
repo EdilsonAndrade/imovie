@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-padding:0 20px;
+padding:0 50px;
 display:flex;
 flex-direction:row;
 justify-content:space-between;
 align-items:flex-start;
-position:fixed;
+
 width:100%;
 box-shadow:inset 0px 18px 107px 4px rgb(151 151 151 / 33%);
 border-radius:0 0 18px 18px;
@@ -23,10 +23,6 @@ ul{
   align-items:center;
   li{
     padding:2px;
-    button{
-      background:none;
-      border:none;
-    }
 
   }
 }
