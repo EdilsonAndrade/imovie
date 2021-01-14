@@ -10,8 +10,14 @@ interface CardPreview {
   previewImage: string;
   coverImage: string;
   title: string;
+  voteAverage:number;
+  voteCount:number;
+  overView:string;
 }
-const CardPreview: React.FC<CardPreview> = ({ previewImage, coverImage, title }: CardPreview) => {
+const CardPreview: React.FC<CardPreview> = ({
+  previewImage, coverImage, title, voteAverage = 0, voteCount = 0,
+  overView,
+}: CardPreview) => {
   const [showDetail, setShowDetail] = useState(false);
   const [image, setImage] = useState('');
   const [postImage, setPostImage] = useState('');
@@ -45,7 +51,14 @@ const CardPreview: React.FC<CardPreview> = ({ previewImage, coverImage, title }:
           </Title>
         </SmokeTitle>
       </PreviewContainer>
-      <CardDetail visible={showDetail} urlImage={postImage} title={title} />
+      <CardDetail
+        voteAverage={voteAverage}
+        voteCount={voteCount}
+        overView={overView}
+        visible={showDetail}
+        urlImage={postImage}
+        title={title}
+      />
     </MainContainer>
   );
 };

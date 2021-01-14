@@ -1,5 +1,49 @@
 import styled, { keyframes, css } from 'styled-components';
 
+export const BackDropImage = styled.img`
+width:100%;
+border-radius:8px;
+
+`;
+
+export const BottomContainer = styled.div`
+position:absolute;
+top:0;
+z-index:3;
+width:100%;
+display:flex;
+flex-direction:column;
+background:rgba(0,0,0,.8);
+padding:10px;
+max-height:120px;
+
+`;
+export const Title = styled.strong`
+font-size:14px;
+
+color:#fff;
+text-align: center;
+`;
+
+export const OverViewContainer = styled.summary`
+overflow: hidden;
+   text-overflow: ellipsis;
+   color:#fff;
+`;
+
+export const VoteContainer = styled.div`
+display:flex;
+flex-direction:row;
+justify-content:space-between;
+align-items:center;
+`;
+
+export const VoteCotent = styled.div`
+
+`;
+
+export const AverageVote = styled.div``;
+
 const fromSmallToBig = keyframes`
   from{
     opacity:0;
@@ -30,12 +74,10 @@ const fromBigToSmall = keyframes`
 
   }
 `;
-
 interface ContainerProps{
   visible:boolean;
 }
 export const Container = styled.div<ContainerProps>`
-
 position:absolute;
 box-shadow: -2px 1px 20px -12px #fff;
 border-radius:8px;
@@ -59,29 +101,4 @@ ${(props) => (props.visible
   height:0px;
   top:0;
   `)}
-`;
-
-export const BackDropImage = styled.img`
-width:100%;
-border-radius:8px;
-
-`;
-export const SmokeTitle = styled.div`
-z-index:1;
-bottom:0;
-left: 50%;
-transform: translateX(-50%);
-width:100%;
-justify-content:center;
-align-items:center;
-display:flex;
-background:rgba(0,0,0,.5);
-padding:10px;
-
-`;
-export const Title = styled.strong`
-font-size:14px;
-
-color:#fff;
-text-align: center;
 `;

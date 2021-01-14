@@ -24,6 +24,9 @@ const Discover: React.FC = () => {
             coverImage={m.poster_path}
             previewImage={m.backdrop_path}
             title={m.title}
+            overView={m.overview}
+            voteAverage={m.vote_average}
+            voteCount={m.vote_count}
           />
         ))}
 
