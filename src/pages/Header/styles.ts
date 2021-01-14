@@ -23,6 +23,11 @@ ul{
   align-items:center;
   li{
     padding:2px;
+    button{
+      background:none;
+      border:none;
+    }
+
   }
 }
 `;
