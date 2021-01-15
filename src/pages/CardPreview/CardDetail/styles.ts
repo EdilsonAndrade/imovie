@@ -15,7 +15,8 @@ display:flex;
 flex-direction:column;
 background:rgba(0,0,0,.8);
 padding:10px;
-max-height:120px;
+max-height:420px;
+border-radius:8px;
 
 `;
 export const Title = styled.strong`
@@ -26,9 +27,8 @@ text-align: center;
 `;
 
 export const OverViewContainer = styled.summary`
-overflow: hidden;
-   text-overflow: ellipsis;
-   color:#fff;
+
+  color:#fff;
 `;
 
 export const VoteContainer = styled.div`
@@ -36,13 +36,33 @@ display:flex;
 flex-direction:row;
 justify-content:space-between;
 align-items:center;
+background:rgba(0,0,0,.9);
+
 `;
 
 export const VoteCotent = styled.div`
-
+background:red;
+padding:5px;
+border-radius:0 0 0 8px;
+color:#fff;
+width:40px;
+text-align:center;
+font-weight:bold;
 `;
 
-export const AverageVote = styled.div``;
+export const ReleaseDate = styled.strong`
+font-size:14px;
+color:#fff;
+`;
+export const AverageVote = styled.div`
+background:green;
+padding:5px;
+border-radius:0 0 0 8px;
+color:#fff;
+width:40px;
+text-align:center;
+font-weight:bold;
+`;
 
 const fromSmallToBig = keyframes`
   from{
@@ -55,7 +75,7 @@ const fromSmallToBig = keyframes`
     opacity:1;
     width:18vmax;
     height:10vmax;
-    top:-145px;
+    top:-108px;
   }
 `;
 
@@ -64,7 +84,7 @@ const fromBigToSmall = keyframes`
     opacity:1;
     width:18vmax;
     height:10vmax;
-    top:-145px;
+    top:-108px;
   }
   to{
     opacity:0;
@@ -92,7 +112,7 @@ ${(props) => (props.visible
   animation:${fromSmallToBig} .5s;
   width:18vmax;
   height:10vmax;
-  top:-145px;
+  top:-108px;
   `
     : css`
   animation:${fromBigToSmall} .5s;

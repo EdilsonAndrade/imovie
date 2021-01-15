@@ -8,14 +8,17 @@ interface ApiResponse{
 results:IMovieData[]
 }
 
-interface IMovieData{
-    backdrop_path:string,
-    overview:string,
-    poster_path:string,
-    title:string,
-    vote_average:number,
-    vote_count:number,
-    adult:boolean,
+export interface IMovieData{
+    id:number;
+    backdrop_path:string;
+    overview:string;
+    poster_path:string;
+    title:string;
+    vote_average:number;
+    vote_count:number;
+    adult:boolean;
+    showDetail:boolean;
+    release_date:string;
 }
 
 interface AuthMovieData{
@@ -31,7 +34,21 @@ const MovieProvider:React.FC = ({ children }) => {
 
   const getMovies = useCallback(async () => {
     const response = await api.get<ApiResponse>(`/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&sort_by=popularity.desc`);
-    setMovieData(response.data.results);
+    const movies:IMovieData[] = [];
+    const { results } = response.data;
+    const options = {
+      month: 'long', day: 'numeric',
+    };
+    if (results) {
+      results.forEach((m) => {
+        const date = new Date(m.release_date);
+        movies.push({
+          ...m,
+          release_date: new Intl.DateTimeFormat('en-US', options).format(date),
+        });
+      });
+    }
+    setMovieData(movies);
   }, []);
 
   return (
@@ -54,10 +71,12 @@ function useMovie():AuthMovieData {
   }
   return context;
 }
+
 MovieProvider.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
 };
+
 export { MovieProvider, useMovie };

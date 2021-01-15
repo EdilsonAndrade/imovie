@@ -3,22 +3,19 @@ import NoImageAvailable from '../../assets/noimage.png';
 import {
   MainContainer, PreviewContainer, BackDropImage, SmokeTitle, Title,
 } from './styles';
-
+import { IMovieData } from '../../hooks/movieHooks';
 import CardDetail from './CardDetail';
 
 interface CardPreview {
   previewImage: string;
   coverImage: string;
-  title: string;
-  voteAverage:number;
-  voteCount:number;
-  overView:string;
+  movie:IMovieData;
+  onClick():void;
+  showDetail:boolean;
 }
 const CardPreview: React.FC<CardPreview> = ({
-  previewImage, coverImage, title, voteAverage = 0, voteCount = 0,
-  overView,
+  previewImage, coverImage, movie, onClick, showDetail,
 }: CardPreview) => {
-  const [showDetail, setShowDetail] = useState(false);
   const [image, setImage] = useState('');
   const [postImage, setPostImage] = useState('');
 
@@ -39,25 +36,20 @@ const CardPreview: React.FC<CardPreview> = ({
   }, [coverImage]);
   return (
     <MainContainer
-      onClick={() => setShowDetail(true)}
-      onMouseLeave={() => setShowDetail(false)}
-
+      onClick={onClick}
     >
       <PreviewContainer>
-        <BackDropImage src={image} alt={title} />
+        <BackDropImage src={image} alt={movie.title} />
         <SmokeTitle>
           <Title>
-            {title}
+            {movie.title}
           </Title>
         </SmokeTitle>
       </PreviewContainer>
       <CardDetail
-        voteAverage={voteAverage}
-        voteCount={voteCount}
-        overView={overView}
         visible={showDetail}
         urlImage={postImage}
-        title={title}
+        movie={movie}
       />
     </MainContainer>
   );

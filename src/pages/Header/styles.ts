@@ -6,7 +6,9 @@ display:flex;
 flex-direction:row;
 justify-content:space-between;
 align-items:flex-start;
-
+position: fixed;
+    top: 0;
+    z-index: 4;
 width:100%;
 box-shadow:inset 0px 18px 107px 4px rgb(151 151 151 / 33%);
 border-radius:0 0 18px 18px;

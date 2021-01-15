@@ -6,6 +6,7 @@ export const MainContainer = styled.div`
   border:none;
   cursor:pointer;
   margin-bottom:48px;
+  background:#000;
 `;
 
 export const PreviewContainer = styled.div`

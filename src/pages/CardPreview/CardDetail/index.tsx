@@ -1,41 +1,43 @@
 import React from 'react';
 import {
   Container,
-  BackDropImage, BottomContainer, Title, OverViewContainer, VoteContainer,
+  BackDropImage, BottomContainer, Title, OverViewContainer, VoteContainer, ReleaseDate,
   VoteCotent, AverageVote,
 } from './styles';
+import { IMovieData } from '../../../hooks/movieHooks';
 
 interface CardDetail {
   urlImage: string;
-  title: string;
   visible: boolean;
-  voteAverage: number;
-  voteCount: number;
-  overView: string;
+  movie:IMovieData;
 }
 const CardDetail: React.FC<CardDetail> = ({
-  urlImage, title, visible = false, voteAverage = 0, voteCount = 0, overView,
+  urlImage, visible = false, movie,
 }: CardDetail) => (
   <Container
     visible={visible}
   >
-    <BackDropImage src={urlImage} alt={title} />
+    <BackDropImage src={urlImage} alt={movie.title} />
     <BottomContainer>
       <Title>
-        {title}
+        {movie.title}
       </Title>
       <OverViewContainer>
-        {overView}
+        {movie.overview}
       </OverViewContainer>
-      <VoteContainer>
-        <VoteCotent>
-          {voteCount}
-        </VoteCotent>
-        <AverageVote>
-          {voteAverage}
-        </AverageVote>
-      </VoteContainer>
+
     </BottomContainer>
+    <VoteContainer>
+      <VoteCotent>
+        {movie.vote_count}
+      </VoteCotent>
+      <ReleaseDate>
+        {movie.release_date}
+      </ReleaseDate>
+      <AverageVote>
+        {movie.vote_average}
+      </AverageVote>
+    </VoteContainer>
   </Container>
 );
 
