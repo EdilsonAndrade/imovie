@@ -3,7 +3,7 @@ import NoImageAvailable from '../../assets/noimage.png';
 import {
   MainContainer, PreviewContainer, BackDropImage, SmokeTitle, Title,
 } from './styles';
-import { IMovieData } from '../../hooks/movieHooks';
+import { IMovieData } from '../../hooks/movie';
 import CardDetail from './CardDetail';
 
 interface CardPreview {

@@ -21,6 +21,7 @@ interface AuthMovieData{
   movie?:IMovieData[];
   getMovies():Promise<void>;
   searchMovies(title:string):void;
+  filterByRate(starId:number):void;
 
 }
 
@@ -59,8 +60,25 @@ const MovieProvider:React.FC = ({ children }) => {
     }
   }, [originalMovieData]);
 
+  const filterByRate = useCallback((starId:number) => {
+    const movieRates = [2, 4, 6, 8, 10];
+
+    if (starId > 0) {
+      const movieFiltered = originalMovieData?.filter(
+        (m) => (Number(m.vote_average.toFixed()) >= movieRates[starId - 1] - 2
+           && Number(m.vote_average.toFixed()) <= movieRates[starId - 1]),
+      );
+
+      setMovieData(movieFiltered);
+    } else {
+      setMovieData(originalMovieData);
+    }
+  }, [originalMovieData]);
   return (
-    <MovieContext.Provider value={{ getMovies, searchMovies, movie: movieData }}>
+    <MovieContext.Provider value={{
+      getMovies, searchMovies, movie: movieData, filterByRate,
+    }}
+    >
       {children}
     </MovieContext.Provider>
   );

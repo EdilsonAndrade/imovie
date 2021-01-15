@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback, useState } from 'react';
-import { IMovieData, useMovie } from '../../hooks/movieHooks';
+import { IMovieData, useMovie } from '../../hooks/movie';
 import CardPreview from '../CardPreview';
 
 import { Container, GridContainer } from './styles';

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { RiSearchLine } from 'react-icons/ri';
 import { MdCancel } from 'react-icons/md';
 import { Container, Content, InputText } from './styles';
-import { useMovie } from '../../hooks/movieHooks';
+import { useMovie } from '../../hooks/movie';
 
 type TClick = boolean | undefined;
 

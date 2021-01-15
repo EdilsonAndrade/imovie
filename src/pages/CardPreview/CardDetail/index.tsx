@@ -5,7 +5,7 @@ import {
   ReleaseDate,
   VoteCotent, AverageVote,
 } from './styles';
-import { IMovieData } from '../../../hooks/movieHooks';
+import { IMovieData } from '../../../hooks/movie';
 
 interface CardDetail {
   urlImage: string;

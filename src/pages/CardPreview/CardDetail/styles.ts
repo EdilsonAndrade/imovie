@@ -134,7 +134,7 @@ position:absolute;
 box-shadow: -2px 1px 20px -12px #fff;
 border-radius:8px;
 background:rgba(0,0,0,.7);
-z-index:2;
+z-index:5;
 left: 50%;
 transform: translateX(-50%);
 

@@ -7,4 +7,7 @@ align-items:center;
 justify-content:space-around;
 width:150px;
 padding:10px;
+svg{
+  cursor:pointer;
+}
 `;
