@@ -4,7 +4,9 @@ export const Container = styled.div`
   width:100%;
   padding:0 120px;
   margin-top:120px;
-  height:126vh;
+  justify-content:center;
+  align-items:center;
+  display:flex;
 `;
 export const CardContent = styled.div``;
 export const GridContainer = styled.div`
