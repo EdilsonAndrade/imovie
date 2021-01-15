@@ -98,6 +98,22 @@ interface ContainerProps{
   visible:boolean;
 }
 export const Container = styled.div<ContainerProps>`
+${(props) => (props.visible
+    ? css`
+  animation:${fromSmallToBig} .5s;
+  width:18vmax;
+  height:10vmax;
+  top:-108px;
+  visibility:visible;
+  `
+    : css`
+  animation:${fromBigToSmall} .5s;
+  opacity:0;
+  width:0px;
+  height:0px;
+  top:0;
+  visibility:hidden;
+  `)}
 position:absolute;
 box-shadow: -2px 1px 20px -12px #fff;
 border-radius:8px;
@@ -107,18 +123,5 @@ left: 50%;
 transform: translateX(-50%);
 
 
-${(props) => (props.visible
-    ? css`
-  animation:${fromSmallToBig} .5s;
-  width:18vmax;
-  height:10vmax;
-  top:-108px;
-  `
-    : css`
-  animation:${fromBigToSmall} .5s;
-  opacity:0;
-  width:0px;
-  height:0px;
-  top:0;
-  `)}
+
 `;

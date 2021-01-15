@@ -36,7 +36,7 @@ const CardPreview: React.FC<CardPreview> = ({
   }, [coverImage]);
   return (
     <MainContainer
-      onClick={onClick}
+      onClick={() => onClick()}
     >
       <PreviewContainer>
         <BackDropImage src={image} alt={movie.title} />

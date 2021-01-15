@@ -20,13 +20,13 @@ const Discover: React.FC = () => {
     setMovies(movie);
   }, [movie]);
 
-  const showDetailCard = (id:number) => {
+  const showDetailCard = useCallback((id:number) => {
     const updatedMovies: IMovieData[] = [];
     movies?.forEach((m) => {
       if (id === m.id) {
         updatedMovies.push({
           ...m,
-          showDetail: true,
+          showDetail: !m.showDetail,
         });
       } else {
         updatedMovies.push({
@@ -36,7 +36,8 @@ const Discover: React.FC = () => {
       }
       setMovies(updatedMovies);
     });
-  };
+  }, [movies]);
+
   return (
     <Container>
       <GridContainer>

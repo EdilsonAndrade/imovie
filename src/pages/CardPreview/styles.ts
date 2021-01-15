@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const MainContainer = styled.div`
+export const MainContainer = styled.button`
   position:relative;
+  margin:0;
   background:none;
   border:none;
-  cursor:pointer;
   margin-bottom:48px;
   background:#000;
 `;

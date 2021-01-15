@@ -6,7 +6,7 @@ export const Container = styled.div`
   margin-top:120px;
   height:126vh;
 `;
-
+export const CardContent = styled.div``;
 export const GridContainer = styled.div`
 
 display:grid;
