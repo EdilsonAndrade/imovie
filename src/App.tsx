@@ -6,8 +6,9 @@ import Header from './pages/Header';
 
 const App:React.FC = () => (
   <>
-    <Header />
+
     <MovieProvider>
+      <Header />
       <Discover />
     </MovieProvider>
     <GlobalStyles />

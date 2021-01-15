@@ -4,10 +4,6 @@ import React, {
 import PropTypes from 'prop-types';
 import api from '../services/api';
 
-interface ApiResponse{
-results:IMovieData[]
-}
-
 export interface IMovieData{
     id:number;
     backdrop_path:string;
@@ -24,7 +20,7 @@ export interface IMovieData{
 interface AuthMovieData{
   movie?:IMovieData[];
   getMovies():Promise<void>;
-  search(title:string):void;
+  searchMovies(title:string):void;
 
 }
 
@@ -52,21 +48,19 @@ const MovieProvider:React.FC = ({ children }) => {
     setOriginalMovieData(movies);
   }, []);
 
-  const search = useCallback((title:string) => {
+  const searchMovies = useCallback((title:string) => {
     if (title.length > 0) {
-      const movieFiltered = originalMovieData?.filter((m) => m.title.includes(title));
+      const movieFiltered = originalMovieData?.filter((m) => m.title.toLowerCase()
+        .includes(title.toLowerCase()));
+
       setMovieData(movieFiltered);
+    } else {
+      setMovieData(originalMovieData);
     }
-  }, []);
+  }, [originalMovieData]);
+
   return (
-    <MovieContext.Provider value={
-      {
-        getMovies,
-        movie: movieData,
-        search,
-      }
-    }
-    >
+    <MovieContext.Provider value={{ getMovies, searchMovies, movie: movieData }}>
       {children}
     </MovieContext.Provider>
   );
