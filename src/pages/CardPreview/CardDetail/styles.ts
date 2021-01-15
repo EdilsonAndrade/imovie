@@ -20,10 +20,10 @@ border-radius:8px;
 
 `;
 export const Title = styled.strong`
-font-size:14px;
-
+font-size:16px;
 color:#fff;
 text-align: center;
+margin:5px;
 `;
 
 export const OverViewContainer = styled.summary`
