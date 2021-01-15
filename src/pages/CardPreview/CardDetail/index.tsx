@@ -1,7 +1,8 @@
 import React from 'react';
 import {
   Container,
-  BackDropImage, BottomContainer, Title, OverViewContainer, VoteContainer, ReleaseDate,
+  BackDropImage, BottomContainer, Title, OverViewContainer, VoteContainer,
+  ReleaseDate,
   VoteCotent, AverageVote,
 } from './styles';
 import { IMovieData } from '../../../hooks/movieHooks';
@@ -28,15 +29,21 @@ const CardDetail: React.FC<CardDetail> = ({
 
     </BottomContainer>
     <VoteContainer>
+
       <VoteCotent>
+        <span>Votes</span>
         {movie.vote_count}
       </VoteCotent>
+
       <ReleaseDate>
         {movie.release_date}
       </ReleaseDate>
+
       <AverageVote>
+        <span>Average</span>
         {movie.vote_average}
       </AverageVote>
+
     </VoteContainer>
   </Container>
 );

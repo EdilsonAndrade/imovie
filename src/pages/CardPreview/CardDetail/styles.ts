@@ -41,11 +41,19 @@ background:rgba(0,0,0,.9);
 `;
 
 export const VoteCotent = styled.div`
+display:flex;
+  flex-direction:column;
+  padding:3px;
+  justify-content:center;
+  align-items:center;
+  span{
+    color:#fff;
+  }
 background:red;
 padding:5px;
 border-radius:0 0 0 8px;
 color:#fff;
-width:40px;
+width:60px;
 text-align:center;
 font-weight:bold;
 `;
@@ -55,11 +63,19 @@ font-size:14px;
 color:#fff;
 `;
 export const AverageVote = styled.div`
+display:flex;
+  flex-direction:column;
+  padding:3px;
+  justify-content:center;
+  align-items:center;
+  span{
+    color:#fff;
+  }
 background:green;
 padding:5px;
 border-radius:0 0 0 8px;
 color:#fff;
-width:40px;
+width:60px;
 text-align:center;
 font-weight:bold;
 `;

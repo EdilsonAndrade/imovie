@@ -2,6 +2,7 @@ import React from 'react';
 
 import Logo from '../Logo';
 import Search from '../Search';
+import StarRating from '../StarRating';
 import { Container, MenuContent } from './styles';
 
 const Header: React.FC = () => (
@@ -12,6 +13,7 @@ const Header: React.FC = () => (
           <Logo />
         </li>
         <li>
+          <StarRating />
           <Search />
         </li>
       </ul>
