@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width:100%;
   padding:0 120px;
+  @media(max-width:1500px){
+    padding:0 76px;
+}
   margin-top:120px;
   justify-content:center;
   align-items:center;
