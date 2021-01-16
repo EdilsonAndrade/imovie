@@ -14,5 +14,11 @@ export const GridContainer = styled.div`
 display:grid;
 grid-template-columns: repeat(5,1fr);
 grid-gap:10px;
+@media(max-width:940px){
+  grid-template-columns: repeat(4,1fr);
+}
+@media(max-width:525px){
+  grid-template-columns: repeat(1,1fr);
+}
 
 `;
