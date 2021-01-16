@@ -10,7 +10,6 @@ const showView = keyframes`
     width:1px;
   }
   to{
-    width:220px;
     border:1px solid #7159c1;
     border-radius:8px;
   }
@@ -19,6 +18,9 @@ const showView = keyframes`
 const hideView = keyframes`
   from{
     width:220px;
+    @media(max-width:767px){
+    width:130px;
+    }
     border:1px solid #7159c1;
     border-radius:8px;
 
@@ -39,6 +41,9 @@ export const Container = styled.div<IContainer>`
   ${(props) => props.searchClicked && css`
     animation: ${showView} .5s;
     width:220px;
+    @media(max-width:767px){
+    width:130px;
+  }
     border:1px solid #7159c1;
     border-radius:8px;
   `}
