@@ -36,8 +36,15 @@ padding:10px;
 
 `;
 export const Title = styled.strong`
-font-size:14px;
+font-size:22px;
 
+@media(max-width:1132px){
+  font-size:16px;
+}
+
+@media(max-width:820px){
+  font-size:10px;
+}
 color:#fff;
 text-align: center;
 `;

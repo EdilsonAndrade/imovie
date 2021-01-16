@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Container,
-  BackDropImage, BottomContainer, Title, OverViewContainer, VoteContainer,
+  BackDropImage, TitleSummaryContainer, Title, OverViewContainerText, VoteContainer,
   ReleaseDate,
   VoteCotent, AverageVote,
 } from './styles';
@@ -19,29 +19,30 @@ const CardDetail: React.FC<CardDetail> = ({
     visible={visible}
   >
     <BackDropImage src={urlImage} alt={movie.title} />
-    <BottomContainer>
+    <TitleSummaryContainer>
       <Title>
         {movie.title}
       </Title>
-      <OverViewContainer>
+      <OverViewContainerText>
         {movie.overview}
-      </OverViewContainer>
+      </OverViewContainerText>
 
-    </BottomContainer>
+    </TitleSummaryContainer>
     <VoteContainer>
 
       <VoteCotent>
         <span>Votes</span>
-        {movie.vote_count}
+        <span>{movie.vote_count}</span>
       </VoteCotent>
 
       <ReleaseDate>
-        {movie.release_date}
+        <span>{movie.release_date}</span>
       </ReleaseDate>
 
       <AverageVote>
         <span>Average</span>
-        {movie.vote_average}
+        <span>{movie.vote_average}</span>
+
       </AverageVote>
 
     </VoteContainer>

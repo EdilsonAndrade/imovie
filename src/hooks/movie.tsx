@@ -32,6 +32,7 @@ const MovieProvider:React.FC = ({ children }) => {
   const [originalMovieData, setOriginalMovieData] = useState<IMovieData[]>();
   const getMovies = useCallback(async () => {
     const response = await api.get(`/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&sort_by=popularity.desc`);
+
     const movies:IMovieData[] = [];
     const { results } = response.data;
     const options = {
