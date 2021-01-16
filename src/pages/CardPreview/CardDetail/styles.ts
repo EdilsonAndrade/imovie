@@ -164,7 +164,7 @@ top:-108px;
   top:-47px;
 }
 @media(max-width:640px){
-  top:-63px;
+  top:-43px;
 }
 @media(min-width:1450px){
   width:15vw;
