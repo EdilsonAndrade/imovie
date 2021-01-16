@@ -17,9 +17,7 @@ background:rgba(0,0,0,.8);
 padding:10px;
 border-radius:8px;
 max-height:27vh;
-@media(max-width:400px){
-  max-height:16vh;
-}
+
 
 `;
 export const Title = styled.strong`
@@ -32,12 +30,10 @@ margin:5px;
   }
 
   @media(max-width:667px){
-   font-size:12px;
+   font-size:14px;
   }
 
-  @media(max-width:400px){
-  font-size:9px;
-}
+
 `;
 
 export const OverViewContainerText = styled.summary`
@@ -46,14 +42,12 @@ export const OverViewContainerText = styled.summary`
   font-size:16px;
   @media(max-width:1200px){
    overflow-y:auto;
-   font-size:15px;
+   font-size:15px
   }
   @media(max-width:667px){
-   font-size:10px;
+   font-size:13px;
   }
-  @media(max-width:400px){
-  font-size:9px;
-}
+
 `;
 
 export const VoteContainer = styled.div`
@@ -66,26 +60,24 @@ background:rgba(0,0,0,.9);
 `;
 
 export const VoteCotent = styled.div`
+
 display:flex;
   flex-direction:column;
-  padding:3px;
+  padding:5px 17px;
   justify-content:center;
   align-items:center;
   span{
     color:#fff;
     font-size:13px;
     @media(max-width:667px){
-  font-size:7px;
+  font-size:12px;
 }
   }
 background:red;
-padding:2px;
-border-radius:0 0 0 8px;
+border-radius:0 0 8px 0px;
 color:#fff;
 text-align:center;
 font-weight:bold;
-min-width:4vw;
-max-width:7vw;
 `;
 
 export const ReleaseDate = styled.strong`
@@ -93,12 +85,11 @@ span{
     color:#fff;
     font-size:14px;
     @media(max-width:667px){
-    font-size:9px;
+    font-size:12px;
     }
-    @media(max-width:400px){
-      font-size:8px;
-}
+
   }
+  padding:15px;
 `;
 export const AverageVote = styled.div`
 display:flex;
@@ -110,19 +101,14 @@ display:flex;
     color:#fff;
     font-size:13px;
     @media(max-width:667px){
-    font-size:7px;
+    font-size:12px;
     }
 
-    @media(max-width:400px){
-      font-size:4px;
-}
   }
 background:green;
-padding:5px;
+padding:5px 9px;
 border-radius:0 0 0 8px;
 color:#fff;
-min-width:3vw;
-max-width:7vw;
 text-align:center;
 font-weight:bold;
 `;
@@ -159,12 +145,10 @@ border-radius:8px;
 background:rgba(0,0,0,.7);
 z-index:5;
 left: 50%;
-top:-108px;
-@media(max-width:400px){
-  top:-47px;
-}
+top:-114px;
+
 @media(max-width:640px){
-  top:-43px;
+  top:-100px;
 }
 @media(min-width:1450px){
   width:15vw;
